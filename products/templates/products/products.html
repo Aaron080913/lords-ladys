@@ -26,27 +26,25 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <div class="card" style="width: 18rem;">
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
-                                    </a>
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                                </a>
                                 {% else %}
-                                    <a href="{% url 'product_detail' product.id %}">    
-                                        <img src="media/coming_soon.jpg" class="card-img-top img-fluid" alt="{{ product.name }}">
-                                    </a>
+                                <a href="{% url 'product_detail' product.id %}">    
+                                    <img src="{{ MEDIA_URL }}coming_soon.jpg" class="card-img-top img-fluid" alt="{{ product.name }}">
+                                </a>
                                 {% endif %}
-                                    <div class="card-body">
-                                      <h4 class="card-title">{{ product.name }}</h4>
-                                      <h5 class="card-title">£{{ product.price }}</h5>
-                                        {% if product.rating %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}                                        
-                                      <p class="card-text">{{ product.description }}</p>
-                                      <a href="#" class="btn btn-primary">Add to Basket</a>
-                                    </div>
-                                  </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ product.name }}</h4>
+                                    <h5 class="card-title">£{{ product.price }}</h5>
+                                    {% if product.rating %}
+                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                    {% endif %}                                        
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <a href="#" class="btn btn-primary">Add to Basket</a>
+                                </div>     
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
