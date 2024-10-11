@@ -81,7 +81,7 @@
                                         <small class="text-muted">No Rating</small>
                                     {% endif %}                                        
                                     <p class="card-text">{{ product.description }}</p>
-                                    <a href="#" class="btn btn-primary">Add to Basket</a>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Add to Basket</a>
                                 </div>     
                             </div>
                         </div>

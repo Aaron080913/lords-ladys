@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-e%oo8qei3nv5&-68)u4*n@s5hb4b=4=^5&ienf0%u@igwp-&n7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-aaron080913-lordsladys-p8mu21drofu.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-aaron080913-lordsladys-p8mu21drofu.ws.codeinstitute-ide.net', 
+'lords-ladys-c59eb83e11b3.herokuapp.com']
 
 
 # Application definition
@@ -114,7 +115,10 @@ WSGI_APPLICATION = 'lords_ladys.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+if 'DATABASE_URL' in os.environ:
+    DATABASE = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -167,6 +171,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
