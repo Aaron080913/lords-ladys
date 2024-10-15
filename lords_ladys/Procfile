@@ -1,1 +1,1 @@
-web: gunicorn LORDS-LADYS.wsgi:application
+web: gunicorn lords_ladys.wsgi:application
