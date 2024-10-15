@@ -8,7 +8,7 @@ var style = {
         color: '#000',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
-        FontSize: '16px',
+        fontSize: '16px',
         '::placeholder': {
             color: '#aab7c4'
         }
@@ -22,14 +22,14 @@ var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
 card.addEventListener('change', function (event) {
-    var errorDiv = document.getElementsById('card-errors');
+    var errorDiv = document.getElementById('card-errors');
     if (event.error) {
-        var html =`
+        var html = `
             <span class="icon" role="alert">
                 <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
-        `
+        `;
         $(errorDiv).html(html);
     } else {
         errorDiv.textContent = '';

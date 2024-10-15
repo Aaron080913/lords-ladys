@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'mf+lv6h*ht@dr5-gzbcg%=$3o$$ojlt1rx6=q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['lords-ladys-c59eb83e11b3.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['lords-ladys-c59eb83e11b3.herokuapp.com', '8000-aaron080913-lordsladys-p8mu21drofu.ws.codeinstitute-ide.net']
 
 
 # Application definition
