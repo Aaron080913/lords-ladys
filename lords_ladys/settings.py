@@ -131,6 +131,10 @@ else:
 
 #DATABASES = {
 #    'default': dj_database_url.parse('postgres://un8qb19pztk:Gd1yoZXuK4MI@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/tart_snack_react_310425')
+# }
+
+#DATABASES = {
+#    'default': dj_database_url.parse('postgres://un8qb19pztk:Gd1yoZXuK4MI@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/tart_snack_react_310425')
 #}
 
 # Password validation
